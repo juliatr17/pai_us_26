@@ -6,17 +6,34 @@ $loan = $_REQUEST["loan"] ?? "";
 $interest = $_REQUEST["interest"] ?? "";
 $years = $_REQUEST["years"] ?? "";
 
+// zmienne błędów
+$errorLoan = "";
+$errorInterest = "";
+$errorYears = "";
+
 // 2. walidacja
 
-$error = "";
+if ($loan == "") {
+    $errorLoan = "Podaj kwotę kredytu";
+} elseif (!is_numeric($loan)) {
+    $errorLoan = "Kwota musi być liczbą";
+}
 
-if (!is_numeric($loan) || !is_numeric($interest) || !is_numeric($years)){
-    $error = "Podaj poprawne liczby";
+if ($interest == "") {
+    $errorInterest = "Podaj oprocentowanie";
+} elseif (!is_numeric($interest)) {
+    $errorInterest = "Oprocentowanie musi być liczbą";
+}
+
+if ($years == "") {
+    $errorYears = "Podaj liczbę lat";
+} elseif (!is_numeric($years)) {
+    $errorYears = "Liczba lat musi być liczbą";
 }
 
 // 3. wykonanie zadania
 
-if ($error == ""){
+if ($errorLoan == "" && $errorInterest == "" && $errorYears == "") {
 
     $loan = floatval($loan);
     $interest = floatval($interest);

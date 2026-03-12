@@ -7,14 +7,20 @@
 
 <form action="calc.php" method="GET">
 
-    Pożyczka:
-    <input type="text" name="loan" value="<?php echo $loan ?? '' ?>"> <br>
+    Loan:
+    <input type="text" name="loan" value="<?php echo $loan ?? '' ?>">
+    <span style="color:red"><?php echo $errorLoan ?? '' ?></span>
+    <br><br>
 
-    Odsetek:
-    <input type="text" name="interest" value="<?php echo $interest ?? '' ?>"> <br>
+    Interest:
+    <input type="text" name="interest" value="<?php echo $interest ?? '' ?>">
+    <span style="color:red"><?php echo $errorInterest ?? '' ?></span>
+    <br><br>
 
-    Lata:
-    <input type="text" name="years" value="<?php echo $years ?? '' ?>"> <br>
+    Years:
+    <input type="text" name="years" value="<?php echo $years ?? '' ?>">
+    <span style="color:red"><?php echo $errorYears ?? '' ?></span>
+    <br><br>
 
     <input type="submit">
 
