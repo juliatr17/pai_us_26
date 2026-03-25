@@ -1,0 +1,5 @@
+vendor/
+templates_c/
+cache/
+composer.lock
+.DS_Store
