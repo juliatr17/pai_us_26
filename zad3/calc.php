@@ -60,4 +60,5 @@ $smarty->assign('errorYears', $errorYears);
 $smarty->assign('payment', $payment);
 
 $smarty->display('calculator.tpl');
+
 ?>
